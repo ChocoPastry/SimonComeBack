@@ -8,6 +8,14 @@ let level = 0;
 
 let h2 = document.querySelector("h2");
 
+document.addEventListener("click", function () {
+  if (started == false) {
+    console.log("game is started");
+    started = true;
+
+    levelUp();
+  }
+});
 document.addEventListener("keypress", function () {
   if (started == false) {
     console.log("game is started");
@@ -59,7 +67,8 @@ function checkAns(idx) {
   }
 }
 
-function btnPress() {
+function btnPress(event) {
+  event.stopPropagation();
   let btn = this;
   userFlash(btn);
 
