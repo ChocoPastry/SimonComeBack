@@ -13,6 +13,7 @@ body {
 .btn-container {
   display: flex;
   justify-content: center;
+  /* flex-wrap: wrap; */
 }
 
 .yellow {
@@ -28,7 +29,7 @@ body {
 }
 
 .green {
-  background-color: #63aac0;
+  background-color: hsl(194, 42%, 57%);
 }
 
 .flash {
@@ -37,4 +38,25 @@ body {
 
 .userflash {
   background-color: green;
+}
+
+@media screen and (max-height: 675px) {
+  .btn {
+    height: 75%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+
+  .line-one,
+  .line-two {
+    justify-content: space-evenly;
+  }
+
+  .btn {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+  }
+
 }
