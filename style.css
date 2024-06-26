@@ -39,11 +39,11 @@ body {
   background-color: green;
 }
 
-@media screen and (max-height: 675px) {
+/* @media screen and (max-height: 675px) {
   .btn {
     height: 75%;
   }
-}
+} */
 
 @media screen and (max-width: 620px) {
 
