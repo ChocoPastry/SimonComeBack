@@ -16,6 +16,7 @@ document.addEventListener("click", function () {
     levelUp();
   }
 });
+
 document.addEventListener("keypress", function () {
   if (started == false) {
     console.log("game is started");
@@ -58,7 +59,7 @@ function checkAns(idx) {
       setTimeout(levelUp, 1000);
     }
   } else {
-    h2.innerHTML = `Game Over! Your score was <b>${level}</b> <br> Press any key to start.`;
+    h2.innerHTML = `Game Over! Your score was <b>${level}</b> <br> Press any key or click anywhere to restart.`;
     document.querySelector("body").style.backgroundColor = "red";
     setTimeout(function () {
       document.querySelector("body").style.backgroundColor = "white";
@@ -68,14 +69,28 @@ function checkAns(idx) {
 }
 
 function btnPress(event) {
-  event.stopPropagation();
   let btn = this;
-  userFlash(btn);
+  if (started == false) {
+    this.addEventListener("click", function () {
+      if (started == false) {
+        console.log("game is started");
+        started = true;
 
-  userColor = btn.getAttribute("id");
-  userSeq.push(userColor);
+        levelUp();
+      }
+    });
+  }
 
-  checkAns(userSeq.length - 1);
+  else {
+    event.stopPropagation();
+    userFlash(btn);
+
+    userColor = btn.getAttribute("id");
+    userSeq.push(userColor);
+
+    checkAns(userSeq.length - 1);
+  }
+
 }
 
 let allBtns = document.querySelectorAll(".btn");
