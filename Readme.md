@@ -6,7 +6,6 @@ Welcome to the Simon Says game! This project is a web-based implementation of th
 
 - Colorful game interface
 - Interactive gameplay
-- Sound effects for each button press
 - Increasing difficulty as the game progresses
 
 ## How to Play
